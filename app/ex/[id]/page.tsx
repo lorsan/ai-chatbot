@@ -1,19 +1,41 @@
-'use client';
-
 import { nanoid } from '@/lib/utils'
 import { Chat } from '@/components/chat'
-import { usePathname } from "next/navigation";
+import { redirect, usePathname } from "next/navigation";
+import { auth } from '@/auth'
+import { Metadata } from 'next';
 
 
 export const runtime = 'nodejs'
+export const preferredRegion = 'home'
 
-export default function ExPage() {
+
+export interface ChatPageProps {
+  params: {
+    name: string
+  }
+}
+
+export async function generateMetadata({
+  params
+}: ChatPageProps): Promise<Metadata> {
+  const session = await auth()
+
+  if (!session?.user) {
+    return {}
+  }
+
+  return {
+  }
+}
+
+export default async function ExPage({ params }: ChatPageProps) {
   const id = nanoid()
 
-  const pathname = usePathname();
-  console.log("AIUTO!!!")
-  console.log(pathname);
-  const name = pathname.substring(pathname.lastIndexOf('/') + 1)
+  const session = await auth()
 
-  return <Chat id={id} name={name}/>
+  if (!session?.user) {
+    redirect(`/sign-in?next=/ex/${params.name}`)
+  }
+
+  return <Chat id={id} name={params.name}/>
 }
