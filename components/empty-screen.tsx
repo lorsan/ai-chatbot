@@ -6,17 +6,13 @@ import { IconArrowRight } from '@/components/ui/icons'
 
 const exampleMessages = [
   {
-    heading: 'Esempio1',
-    message: `What is a "serverless function"?`
+    heading: 'Mostra',
+    message: `Cosa posso vedere alla mostra"?`
   },
   {
-    heading: 'Example',
-    message: 'Summarize the following article for a 2nd grader: \n'
+    heading: 'Esibizione',
+    message: 'Quando è stata costruita la villa?: \n'
   },
-  {
-    heading: 'Draft an email',
-    message: `Draft an email to my boss about the following: \n`
-  }
 ]
 
 export function EmptyScreen({ setInput }: Pick<UseChatHelpers, 'setInput'>) {

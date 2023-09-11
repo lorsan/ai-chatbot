@@ -9,13 +9,14 @@ export type Metadata = {
 }
 
 // The function `getContext` is used to retrieve the context of a given message
-export const getContext = async (message: string, namespace: string, maxTokens = 3000, minScore = 0.7, getOnlyText = true): Promise<string | ScoredVector[]> => {
+export const getContext = async (message: string, namespace: string, mostraName: string, maxTokens = 3000, minScore = 0.7, getOnlyText = true): Promise<string | ScoredVector[]> => {
 
   // Get the embeddings of the input message
+  console.log(message)
   const embedding = await getEmbeddings(message);
 
   // Retrieve the matches for the embeddings from the specified namespace
-  const matches = await getMatchesFromEmbeddings(embedding, 3, namespace);
+  const matches = await getMatchesFromEmbeddings(embedding, 3, namespace, mostraName);
 
   console.log(matches)
 

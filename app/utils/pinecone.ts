@@ -14,7 +14,7 @@ export const getPineconeClient = async () => {
 }
 
 // The function `getMatchesFromEmbeddings` is used to retrieve matches for the given embeddings
-const getMatchesFromEmbeddings = async (embeddings: number[], topK: number, namespace: string): Promise<ScoredVector[]> => {
+const getMatchesFromEmbeddings = async (embeddings: number[], topK: number, namespace: string, mostraName: string): Promise<ScoredVector[]> => {
   // Obtain a client for Pinecone
   const pinecone = await getPineconeClient();
 
@@ -34,7 +34,8 @@ const getMatchesFromEmbeddings = async (embeddings: number[], topK: number, name
     vector: embeddings,
     topK,
     includeMetadata: true,
-    namespace
+    namespace,
+    filter: { name: { '$eq': mostraName }}
   }
 
   try {

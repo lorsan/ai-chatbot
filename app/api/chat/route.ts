@@ -5,6 +5,7 @@ import { Configuration, OpenAIApi } from 'openai-edge'
 import { auth } from '@/auth'
 import { nanoid } from '@/lib/utils'
 import { getContext } from '@/app/utils/context'
+import { toNamespacedPath } from 'path'
 
 export const runtime = 'nodejs'
 
@@ -16,7 +17,7 @@ const openai = new OpenAIApi(configuration)
 
 export async function POST(req: Request) {
   const json = await req.json()
-  const { messages, previewToken } = json
+  const { messages, previewToken, name } = json
   const userId = (await auth())?.user.id
 
   console.log(messages);
@@ -35,7 +36,7 @@ export async function POST(req: Request) {
   const lastMessage = messages[messages.length - 1]
 
   // Get the context from the last message
-  const context = await getContext(lastMessage.content, '')
+  const context = await getContext(lastMessage.content, '', name);
 
   console.log("CONTEXT")
   console.log(context);
