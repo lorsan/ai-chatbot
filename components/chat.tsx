@@ -53,13 +53,20 @@ export function Chat({ id, initialMessages, name, className }: ChatProps) {
   return (
     <>
       <div className={cn('pb-[200px] pt-4 md:pt-10', className)}>
+      <div className="mx-auto max-w-2xl px-4">
+          <div className="rounded-lg border bg-background p-8">
+            <h1 className="mb-2 text-lg font-semibold">
+              Welcome to {name}
+            </h1>
+          </div>
+          </div> 
         {messages.length ? (
           <>
             <ChatList messages={messages} />
             <ChatScrollAnchor trackVisibility={isLoading} />
           </>
         ) : (
-          <EmptyScreen setInput={setInput} />
+          <EmptyScreen setInput={setInput}/>
         )}
       </div>
       <ChatPanel

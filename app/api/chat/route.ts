@@ -38,6 +38,8 @@ export async function POST(req: Request) {
   // Get the context from the last message
   const context = await getContext(lastMessage.content, '', name);
 
+  console.log("NAME")
+  console.log(name)
   console.log("CONTEXT")
   console.log(context);
 

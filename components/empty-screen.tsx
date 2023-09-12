@@ -19,11 +19,8 @@ export function EmptyScreen({ setInput }: Pick<UseChatHelpers, 'setInput'>) {
   return (
     <div className="mx-auto max-w-2xl px-4">
       <div className="rounded-lg border bg-background p-8">
-        <h1 className="mb-2 text-lg font-semibold">
-          Welcome to MostraGpt!
-        </h1>
         <p className="mb-2 leading-normal text-muted-foreground">
-          Fammi una domanda sulla mostra villa romana arrii{' '} <br/>
+          Fammi una domanda sulla mostra {' '} <br/>
           Make me a question on the exhibition{' '} <br/>
           .....
         </p>
