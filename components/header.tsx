@@ -52,6 +52,7 @@ export async function Header() {
           )}
         </div>
       </div>
+      {/*
       <div className="flex items-center justify-end space-x-2">
         <a
           target="_blank"
@@ -63,6 +64,7 @@ export async function Header() {
           <span className="ml-2 hidden md:flex">GitHub</span>
         </a>
       </div>
+      */}
     </header>
   )
 }

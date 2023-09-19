@@ -12,10 +12,10 @@ import { Header } from '@/components/header'
 export const metadata: Metadata = {
   //metadataBase: new URL("http://localhost:3000"),
   title: {
-    default: 'Next.js AI Chatbot',
-    template: `%s - Next.js AI Chatbot`
+    default: 'MostraGPT',
+    template: `%s - MostraGPT`
   },
-  description: 'An AI-powered chatbot template built with Next.js and Vercel.',
+  description: 'MostraGPT',
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: 'white' },
     { media: '(prefers-color-scheme: dark)', color: 'black' }
