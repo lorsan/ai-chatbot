@@ -71,6 +71,15 @@ export default function Home() {
               </Link>
             </div>
           </div>
+          <div className="sm:mb-8 sm:flex sm:justify-center">
+            <div className="relative rounded-full px-3 py-5 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+              Mostra .{' '}
+              <Link href="/ex/curti" className="font-semibold text-indigo-600">
+                <span className="absolute inset-0" aria-hidden="true" />
+                Bunker <span aria-hidden="true">&rarr;</span>
+              </Link>
+            </div>
+          </div>
         </div>
         <div
           className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
