@@ -9,6 +9,7 @@ import { Sidebar } from '@/components/sidebar'
 import { SidebarList } from '@/components/sidebar-list'
 import {
   IconGitHub,
+  IconMoon,
   IconNextChat,
   IconSeparator,
   IconVercel
@@ -38,21 +39,25 @@ export async function Header() {
             </SidebarFooter>
           </Sidebar>
         ) : (
-          <Link href="/" target="_blank" rel="nofollow">
-            <IconNextChat className="mr-2 h-6 w-6 dark:hidden" inverted />
-            <IconNextChat className="mr-2 hidden h-6 w-6 dark:block" />
+          <Link href="https://www.mpbot.ai" target="_blank" rel="nofollow">
+            <img src='/mpbot.svg' className='h-auto w-32 mr-5' />
           </Link>
         )}
         <div className="flex items-center">
-          <IconSeparator className="h-6 w-6 text-muted-foreground/50" />
           {session?.user ? (
             <UserMenu user={session.user} />
           ) : (
             <Button variant="link" asChild className="-ml-2">
-              <Link href="/sign-in?callbackUrl=/">Login</Link>
+              <Link href="/sign-in?callbackUrl=/"></Link>
             </Button>
           )}
         </div>
+        <Button variant="link" asChild className="-ml-2">
+              <Link href="#">Help</Link>
+        </Button>
+        <Button variant="link" asChild className="-ml-2">
+              <Link href="#">Contattaci</Link>
+        </Button>
       </div>
       {/*
       <div className="flex items-center justify-end space-x-2">

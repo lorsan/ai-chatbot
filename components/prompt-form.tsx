@@ -48,7 +48,7 @@ export function PromptForm({
       ref={formRef}
     >
       <div className="relative flex max-h-60 w-full grow flex-col overflow-hidden bg-background px-8 sm:rounded-md sm:border sm:px-12">
-        <Tooltip>
+        {/* <Tooltip>
           <TooltipTrigger asChild>
             <button
               onClick={e => {
@@ -66,7 +66,7 @@ export function PromptForm({
             </button>
           </TooltipTrigger>
           <TooltipContent>New Chat</TooltipContent>
-        </Tooltip>
+        </Tooltip> */}
         <Textarea
           ref={inputRef}
           tabIndex={0}
@@ -74,7 +74,7 @@ export function PromptForm({
           rows={1}
           value={input}
           onChange={e => setInput(e.target.value)}
-          placeholder="Send a message."
+          placeholder="Scrivi la tua domanda"
           spellCheck={false}
           className="min-h-[60px] w-full resize-none bg-transparent px-4 py-[1.3rem] focus-within:outline-none sm:text-sm"
         />

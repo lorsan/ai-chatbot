@@ -32,6 +32,8 @@ export async function generateMetadata({
 export default async function ExPage({ params }: ChatPageProps) {
   const id = nanoid()
 
+  // Mappi i titoli dei bot
+
   const session = await auth()
 
   if (!session?.user) {
@@ -40,3 +42,4 @@ export default async function ExPage({ params }: ChatPageProps) {
 
   return <Chat id={id} name={params.name}/>
 }
+
