@@ -7,8 +7,6 @@ import { cn } from '@/lib/utils'
 import { Button, type ButtonProps } from '@/components/ui/button'
 import { IconGitHub, IconSpinner, IconGoogle } from '@/components/ui/icons'
 
-import { usePathname } from 'next/navigation'
-
 interface LoginButtonProps extends ButtonProps {
   showGithubIcon?: boolean
   showGoogleIcon?: boolean
@@ -23,14 +21,13 @@ export function LoginButton({
   ...props
 }: LoginButtonProps) {
   const [isLoading, setIsLoading] = React.useState(false)
-  const pathname = usePathname()
   return (
     <Button
       variant="outline"
       onClick={() => {
         setIsLoading(true)
         // next-auth signIn() function doesn't work yet at Edge Runtime due to usage of BroadcastChannel
-        signIn('google', { callbackUrl: pathname })
+        signIn('google', { callbackUrl: `/` })
       }}
       disabled={isLoading}
       className={cn(className)}
