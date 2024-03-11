@@ -50,6 +50,13 @@ export function Chat({ id, initialMessages, name, className }: ChatProps) {
         }
       }
     })
+// chekc name per ottimizzare il titolo della chat
+    if(name==='bunker_museum'){
+      name="Benvenuto al Bunker Museum"
+    }else{
+      {name}
+    }
+
   return (
     // Primo block di introduzione nella chat
     <>
