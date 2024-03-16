@@ -51,8 +51,8 @@ export function Chat({ id, initialMessages, name, className }: ChatProps) {
       }
     })
 // chekc name per ottimizzare il titolo della chat
-    if(name==='bunker_museum'){
-      name="Benvenuto al Bunker Museum"
+    if(name==='curti'){
+      name="Welcome to the Bunker Museum"
     }else{
       {name}
     }
