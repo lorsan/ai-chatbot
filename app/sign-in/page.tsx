@@ -15,11 +15,11 @@ export default async function SignInPage() {
 <div className="flex min-h-screen bg-white justify-center items-center">
   <div className="session flex flex-col sm:flex-row rounded-lg shadow-md m-8">
     {/* Imposta l'immagine come cover sia in modalità mobile che desktop */}
-    <div className="left w-full h-64 bg-center bg-cover rounded-t-lg sm:w-64 sm:h-auto sm:rounded-l-lg sm:rounded-tr-none" style={{ backgroundImage: "url('/indianbot.png')" }}></div>
+    <div className="left w-full h-64 bg-center bg-cover rounded-t-lg sm:w-64 sm:h-auto sm:rounded-l-lg sm:rounded-tr-none" style={{ backgroundImage: "url('/logo-sibilla.png')" }}></div>
 
     <div className="log-in flex flex-col items-center sm:items-start bg-white p-8 sm:p-16 md:p-32 w-full">
       <h4 className="font-semibold text-xl sm:text-2xl mb-2">
-        Ciao sono <span className="font-bold">SIBILLA 🤠</span>
+        Hello, I&apos;m <span className="font-bold">SIBILLA</span>
       </h4>
       <p className="text-base sm:text-lg text-gray-600 mb-4 sm:text-left">
         
@@ -29,7 +29,6 @@ export default async function SignInPage() {
     </div>
   </div>
 </div>
-
 
   )
 }
