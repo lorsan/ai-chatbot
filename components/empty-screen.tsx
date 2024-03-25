@@ -17,7 +17,7 @@ const exampleMessages = [
 
 export function EmptyScreen({ setInput }: Pick<UseChatHelpers, 'setInput'>) {
   return (
-    <div className="mx-auto max-w-2xl px-4">
+    <div className="mx-auto max-w-2xl px-4 text-black">
         <p className="mb-2 leading-normal text-lg pl-8">
         Welcome 🤠 I&apos;m Sibilla your personal assistant. Feel free to ask me what you want.
         </p>

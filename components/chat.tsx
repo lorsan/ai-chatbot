@@ -60,9 +60,9 @@ export function Chat({ id, initialMessages, name, className }: ChatProps) {
   return (
     // Primo block di introduzione nella chat
     <>
-      <div className={cn('pb-[200px] pt-4 md:pt-10 bg-white', className)}>
+      <div className={cn('pb-[200px] pt-4 md:pt-10 bg-white text-black',  className)}>
       <div className="mx-auto max-w-2xl px-4">
-          <div className="rounded-lg bg-background p-8">
+          <div className="rounded-lg bg-transparent p-8">
             <h1 className="mb-2 text-2xl font-semibold">
               {/* Qui viene passato il titolo della mostra */}
               {name}
