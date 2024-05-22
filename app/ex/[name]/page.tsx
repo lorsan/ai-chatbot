@@ -41,5 +41,6 @@ export default async function ExPage({ params }: ChatPageProps) {
   }
 
   return <Chat id={id} name={params.name}/>
+  
 }
 
