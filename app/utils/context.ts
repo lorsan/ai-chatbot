@@ -1,4 +1,4 @@
-import { ScoredVector } from "@pinecone-database/pinecone";
+//import { ScoredVector } from "@pinecone-database/pinecone";
 import { getMatchesFromEmbeddings } from "./pinecone";
 import { getEmbeddings } from './embeddings'
 
