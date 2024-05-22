@@ -105,7 +105,7 @@ async function agent(userInput:string) {
  
       messages.push({
         role: "function",
-        name: functionName,
+        name: functionName!,
         content: `
                 The result of the last function was this: ${JSON.stringify(
                   functionResponse

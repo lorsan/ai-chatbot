@@ -1,6 +1,6 @@
-//import { PineconeClient, ScoredVector } from "@pinecone-database/pinecone";
+import { Pinecone, ScoredPineconeRecord } from "@pinecone-database/pinecone";
 
-import { Pinecone } from '@pinecone-database/pinecone';
+//import { Pinecone } from '@pinecone-database/pinecone';
 //const pc = new Pinecone({ apiKey: process.env.PINECONE_API_KEY! });
 
 
@@ -23,7 +23,7 @@ export const getPineconeClient = async () => {
 //export const pc = new Pinecone({ apiKey: 'YOUR_API_KEY' });
 
 // The function `getMatchesFromEmbeddings` is used to retrieve matches for the given embeddings
-const getMatchesFromEmbeddings = async (embeddings: number[], topK: number, namespace: string, mostraName: string): Promise<ScoredVector[]> => {
+const getMatchesFromEmbeddings = async (embeddings: number[], topK: number, namespace: string, mostraName: string): Promise<ScoredPineconeRecord[]> => {
   // Obtain a client for Pinecone
   const pinecone = await getPineconeClient();
 
