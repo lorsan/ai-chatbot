@@ -24,8 +24,8 @@ import { toast } from 'react-hot-toast'
 const IS_PREVIEW = process.env.VERCEL_ENV === 'preview'
 export interface ChatProps extends React.ComponentProps<'div'> {
   initialMessages?: Message[]
-  id?: string,
-  name?:string
+  id?: string
+  name?: string
 }
 
 export function Chat({ id, initialMessages, name, className }: ChatProps) {
@@ -50,32 +50,39 @@ export function Chat({ id, initialMessages, name, className }: ChatProps) {
         }
       }
     })
-// chekc name per ottimizzare il titolo della chat
-    if(name==='curti'){
-      name="Welcome to the Bunker Museum"
-    }else{
-      {name}
+  // chekc name per ottimizzare il titolo della chat
+  if (name === 'curti') {
+    name = 'Welcome to the Bunker Museum'
+  } else {
+    {
+      name
     }
+  }
 
   return (
     // Primo block di introduzione nella chat
     <>
-      <div className={cn('pb-[200px] pt-4 md:pt-10 bg-white text-black',  className)}>
-      <div className="mx-auto max-w-2xl px-4">
+      <div
+        className={cn(
+          'pb-[200px] pt-4 md:pt-10 bg-white text-black',
+          className
+        )}
+      >
+        <div className="mx-auto max-w-2xl px-4">
           <div className="rounded-lg bg-transparent p-8">
             <h1 className="mb-2 text-2xl font-semibold">
               {/* Qui viene passato il titolo della mostra */}
               {name}
             </h1>
           </div>
-          </div> 
+        </div>
         {messages.length ? (
           <>
             <ChatList messages={messages} />
             <ChatScrollAnchor trackVisibility={isLoading} />
           </>
         ) : (
-          <EmptyScreen setInput={setInput}/>
+          <EmptyScreen setInput={setInput} />
         )}
       </div>
       <ChatPanel
