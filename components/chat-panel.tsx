@@ -31,10 +31,9 @@ export function ChatPanel({
   messages
 }: ChatPanelProps) {
   return (
-    <div className="fixed inset-x-0 bg-white bottom-0 from-muted/10 from-10% to-muted/30 to-50%">
+    <div className="sm:mb-6 mb-0 fixed inset-x-0 bg-white bottom-0 from-muted/10 from-10% to-muted/30 to-50%">
       <ButtonScrollToBottom />
       <div className="mx-auto sm:max-w-2xl sm:px-4">
-
         <div className="space-y-4 border-t bg-background px-4 py-2 shadow-lg sm:rounded-t-xl sm:border md:py-4">
           <PromptForm
             onSubmit={async value => {

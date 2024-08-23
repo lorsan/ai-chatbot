@@ -76,7 +76,7 @@ export function PromptForm({
           onChange={e => setInput(e.target.value)}
           placeholder="Scrivi la tua domanda"
           spellCheck={false}
-          className="min-h-[60px] w-full resize-none bg-white px-4 py-[1.3rem] focus-within:outline-none sm:text-sm text-black"
+          className="min-h-[60px] w-full resize-none bg-white py-[1.3rem] focus-within:outline-none sm:text-sm text-black"
         />
         <div className="absolute right-0 top-4 sm:right-4">
           <Tooltip>

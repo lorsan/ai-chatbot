@@ -8,7 +8,7 @@ import remarkMath from 'remark-math'
 import { cn } from '@/lib/utils'
 import { CodeBlock } from '@/components/ui/codeblock'
 import { MemoizedReactMarkdown } from '@/components/markdown'
-import { IconOpenAI, IconUser, IconAlien } from '@/components/ui/icons'
+import { IconOpenAI, IconAlien } from '@/components/ui/icons'
 import { ChatMessageActions } from '@/components/chat-message-actions'
 
 export interface ChatMessageProps {
@@ -18,26 +18,28 @@ export interface ChatMessageProps {
 export function ChatMessage({ message, ...props }: ChatMessageProps) {
   return (
     <div
-      className={cn('group relative mb-4 flex items-start md:-ml-12')}
+      className={cn('group relative mb-2 flex items-start md:-ml-12')}
       {...props}
     >
       <div
         className={cn(
-          'flex h-8 w-8 shrink-0 select-none items-center justify-center rounded-md border shadow',
+          'px-1 ml-4 space-y-2 overflow-hidden',
           message.role === 'user'
-            ? 'bg-background'
-            : 'bg-primary text-primary-foreground'
+            ? 'rounded-lg border text-right inline-block px-3 py-2 bg-gray-200 ml-auto'
+            : 'rounded-lg border text-justify inline-block px-3 py-2 bg-orange-300'
         )}
       >
-        {message.role === 'user' ? <IconUser /> : <IconAlien />}
-      </div>
-      <div className="flex-1 px-1 ml-4 space-y-2 overflow-hidden">
+        {/* <div className="flex-1 px-1 ml-4 space-y-2 overflow-hidden border-solid	border-2"> */}
         <MemoizedReactMarkdown
           className="prose break-words prose-invert prose-p:leading-relaxed prose-pre:p-0"
           remarkPlugins={[remarkGfm, remarkMath]}
           components={{
             p({ children }) {
-              return <p className="mb-2 last:mb-0 text-black">{children}</p>
+              return (
+                <p className="mb-2 last:mb-0 text-base text-black">
+                  {children}
+                </p>
+              )
             },
             code({ node, inline, className, children, ...props }) {
               if (children.length) {

@@ -12,7 +12,7 @@ export function FooterText({ className, ...props }: React.ComponentProps<'p'>) {
       )}
       {...props}
     >
-      Powered by mpbot.ai {' '}
+      Powered by mpbot.ai{' '}
       {/*
       <ExternalLink href="https://nextjs.org">Next.js</ExternalLink> and{' '}
       <ExternalLink href="https://vercel.com/storage/kv">
