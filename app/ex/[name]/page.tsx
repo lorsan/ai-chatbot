@@ -1,13 +1,11 @@
 import { nanoid } from '@/lib/utils'
 import { Chat } from '@/components/chat'
-import { redirect, usePathname } from "next/navigation";
+import { redirect, usePathname } from 'next/navigation'
 import { auth } from '@/auth'
-import { Metadata } from 'next';
-
+import { Metadata } from 'next'
 
 export const runtime = 'nodejs'
 export const preferredRegion = 'home'
-
 
 export interface ChatPageProps {
   params: {
@@ -25,7 +23,7 @@ export async function generateMetadata({
   }
 
   return {
-    title : params.name
+    title: params.name
   }
 }
 
@@ -34,13 +32,11 @@ export default async function ExPage({ params }: ChatPageProps) {
 
   // Mappi i titoli dei bot
 
-  const session = await auth()
+  //const session = await auth()
 
-  if (!session?.user) {
-    redirect(`/sign-in?next=/ex/${params.name}`)
-  }
+  // if (!session?.user) {
+  //   redirect(`/sign-in?next=/ex/${params.name}`)
+  // }
 
-  return <Chat id={id} name={params.name}/>
-  
+  return <Chat id={id} name={params.name} />
 }
-

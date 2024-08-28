@@ -23,18 +23,18 @@ export async function POST(req: Request) {
   const user = (await auth())?.user
   //Github
   //const userId = user.id
-  const userId = user.email
+  //const userId = user.email
   console.log("USER");
   console.log(user);
   
   console.log("USERID");
-  console.log(userId);
+  //console.log(userId);
 
-  if (!userId) {
-    return new Response('Unauthorized', {
-      status: 401
-    })
-  }
+  // if (!userId) {
+  //   return new Response('Unauthorized', {
+  //     status: 401
+  //   })
+  // }
 
   if (previewToken) {
     configuration.apiKey = previewToken
@@ -92,7 +92,7 @@ export async function POST(req: Request) {
       const payload = {
         id,
         title,
-        userId,
+        //userId,
         createdAt,
         path,
         messages: [
@@ -104,7 +104,8 @@ export async function POST(req: Request) {
         ]
       }
       await kv.hmset(`chat:${id}`, payload)
-      await kv.zadd(`user:chat:${userId}`, {
+      await kv.zadd(`chat`, {
+      // await kv.zadd(`user:chat:${userId}`, {
         score: createdAt,
         member: `chat:${id}`
       })
