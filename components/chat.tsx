@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils'
 import { ChatList } from '@/components/chat-list'
 import { ChatPanel } from '@/components/chat-panel'
 import { EmptyScreen } from '@/components/empty-screen'
+import { EmptyScreenMuseum } from '@/components/empty-screen-museum'
 import { ChatScrollAnchor } from '@/components/chat-scroll-anchor'
 import { useLocalStorage } from '@/lib/hooks/use-local-storage'
 import {
@@ -68,6 +69,8 @@ export function Chat({ id, initialMessages, name, className }: ChatProps) {
             <ChatList messages={messages} />
             <ChatScrollAnchor trackVisibility={isLoading} />
           </>
+        ) : name === 'oceania' ? (
+          <EmptyScreenMuseum setInput={setInput} />
         ) : (
           <EmptyScreen setInput={setInput} />
         )}
