@@ -14,10 +14,10 @@ const exampleMessages = [
 
 const articleMessage = [
   {
-    title: 'Cosa posso vedere a Sanzeno?'
+    title: 'Ci sono monumenti archeologici?'
   },
   {
-    title: 'Dove posso pranzare?'
+    title: 'Parlami della chiesa del posto'
   }
 ]
 
@@ -28,7 +28,7 @@ export function EmptyScreen({ setInput }: Pick<UseChatHelpers, 'setInput'>) {
         <div className="mx-auto max-w-2xl p-10 sm:p-4">
           <div className="rounded-lg bg-transparent pb-4 sm:pb-8">
             <h1 className="text-3xl font-extrabold sm:text-5xl">
-              Benvenuto a Sanzeno
+              Benvenuto
               <strong className="font-extrabold text-violet-500 sm:block">
                 {' '}
                 Cosa vuoi sapere?{' '}
@@ -38,9 +38,9 @@ export function EmptyScreen({ setInput }: Pick<UseChatHelpers, 'setInput'>) {
 
           <div className="text-black">
             <p className="mb-6 sm:mb-14 leading-normal text-lg">
-              Esplora Sanzeno con me. Vuoi sapere degli ultimi scavi
-              archeologici e dei ritrovamenti più sorprendenti? Vuoi consigli su
-              attività e itinerari e altre curiosità sul paese? Chiedi pure{' '}
+              Esplora con me. Chiedimi dei punti di interesse locali e dei
+              ritrovamenti più sorprendenti. Posso darti consigli su attività,
+              itinerari e altre curiosità sul paese. Dai iniziamo, chiedi pure{' '}
               <b>te lo racconto io!</b>
             </p>
           </div>

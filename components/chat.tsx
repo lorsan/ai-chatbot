@@ -51,13 +51,13 @@ export function Chat({ id, initialMessages, name, className }: ChatProps) {
       }
     })
   // chekc name per ottimizzare il titolo della chat
-  if (name === 'curti') {
-    name = 'Welcome to the Bunker Museum'
-  } else {
-    {
-      name
-    }
-  }
+  // if (name === 'curti') {
+  //   name = 'Welcome to the Bunker Museum'
+  // } else {
+  //   {
+  //     name
+  //   }
+  // }
 
   return (
     // Primo block di introduzione nella chat
